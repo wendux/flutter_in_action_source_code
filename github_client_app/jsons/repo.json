@@ -1,0 +1,46 @@
+{
+  "id": 1296269,
+  "name": "Hello-World",
+  "full_name": "octocat/Hello-World",
+  "owner": "$user",
+  "parent":"$repo",
+  "private": false,
+  "html_url": "https://github.com/octocat/Hello-World",
+  "description": "This your first repo!",
+  "fork": false,
+  "homepage": "https://github.com",
+  "language": "JavaScript",
+  "forks_count": 9,
+  "stargazers_count": 80,
+  "watchers_count": 80,
+  "size": 108,
+  "default_branch": "master",
+  "open_issues_count": 0,
+  "topics": [
+    "octocat",
+    "atom",
+    "electron",
+    "API"
+  ],
+  "has_issues": true,
+  "has_projects": true,
+  "has_wiki": true,
+  "has_pages": false,
+  "has_downloads": true,
+  "pushed_at": "2011-01-26T19:06:43Z",
+  "created_at": "2011-01-26T19:01:12Z",
+  "updated_at": "2011-01-26T19:14:43Z",
+  "permissions": {
+    "admin": false,
+    "push": false,
+    "pull": true
+  },
+  "subscribers_count": 42,
+  "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZW1pdA=="
+  }
+}
