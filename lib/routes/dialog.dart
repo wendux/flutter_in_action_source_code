@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class DialogRoute extends StatefulWidget {
@@ -12,95 +14,120 @@ class _DialogRouteState extends State<DialogRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        RaisedButton(
-          child: Text("对话框1"),
-          onPressed: () async {
-            bool deleteTree = await showDeleteConfirmDialog1();
-            if (deleteTree == null) {
-              print("取消删除");
-            } else {
-              print("已确认删除");
-            }
-          },
-        ),
-        RaisedButton(
-          child: Text("对话框2"),
-          onPressed: () async {
-            bool delete = await showDeleteConfirmDialog2();
-            if (delete == null) {
-              print("取消删除");
-            } else {
-              print("同时删除子目录: $delete");
-            }
-          },
-        ),
-        RaisedButton(
-          child: Text("话框3（复选框可点击）"),
-          onPressed: () async {
-            bool deleteTree = await showDeleteConfirmDialog3();
-            if (deleteTree == null) {
-              print("取消删除");
-            } else {
-              print("同时删除子目录: $deleteTree");
-            }
-          },
-        ),
-        RaisedButton(
-          child: Text("对话框4（复选框可点击）"),
-          onPressed: () async {
-            bool deleteTree = await showDeleteConfirmDialog4();
-            if (deleteTree == null) {
-              print("取消删除");
-            } else {
-              print("同时删除子目录: $deleteTree");
-            }
-          },
-        ),
-        RaisedButton(
-          child: Text("选择语言"),
-          onPressed: () {
-            changeLanguage();
-          },
-        ),
-        RaisedButton(
-          child: Text("显示列表对话框"),
-          onPressed: () {
-            showListDialog();
-          },
-        ),
-        RaisedButton(
-          child: Text("自定义对话框"),
-          onPressed: () async {
-            bool deleteTree = await showDeleteConfirmDialog5();
-            if (deleteTree == null) {
-              print("取消删除");
-            } else {
-              print("已确认删除");
-            }
-          },
-        ),
-        RaisedButton(
-          child: Text("显示底部菜单列表(模态)"),
-          onPressed: () async {
-            int type = await _showModalBottomSheet();
-            print(type);
-          },
-        ),
-        RaisedButton(
-          child: Text("显示底部菜单列表(非模态)"),
-          onPressed: () async {
-            _showBottomSheet();
-          },
-        ),
-        RaisedButton(
-          child: Text("显示Loading框"),
-          onPressed: () async {
-            showLoadingDialog();
-          },
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          RaisedButton(
+            child: Text("对话框1"),
+            onPressed: () async {
+              bool deleteTree = await showDeleteConfirmDialog1();
+              if (deleteTree == null) {
+                print("取消删除");
+              } else {
+                print("已确认删除");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("对话框2"),
+            onPressed: () async {
+              bool delete = await showDeleteConfirmDialog2();
+              if (delete == null) {
+                print("取消删除");
+              } else {
+                print("同时删除子目录: $delete");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("话框3（复选框可点击）"),
+            onPressed: () async {
+              bool deleteTree = await showDeleteConfirmDialog3();
+              if (deleteTree == null) {
+                print("取消删除");
+              } else {
+                print("同时删除子目录: $deleteTree");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("话框3x（复选框可点击）"),
+            onPressed: () async {
+              bool deleteTree = await showDeleteConfirmDialog3x();
+              if (deleteTree == null) {
+                print("取消删除");
+              } else {
+                print("同时删除子目录: $deleteTree");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("对话框4（复选框可点击）"),
+            onPressed: () async {
+              bool deleteTree = await showDeleteConfirmDialog4();
+              if (deleteTree == null) {
+                print("取消删除");
+              } else {
+                print("同时删除子目录: $deleteTree");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("选择语言"),
+            onPressed: () {
+              changeLanguage();
+            },
+          ),
+          RaisedButton(
+            child: Text("显示列表对话框"),
+            onPressed: () {
+              showListDialog();
+            },
+          ),
+          RaisedButton(
+            child: Text("自定义对话框"),
+            onPressed: () async {
+              bool deleteTree = await showDeleteConfirmDialog5();
+              if (deleteTree == null) {
+                print("取消删除");
+              } else {
+                print("已确认删除");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("显示底部菜单列表(模态)"),
+            onPressed: () async {
+              int type = await _showModalBottomSheet();
+              print(type);
+            },
+          ),
+          RaisedButton(
+            child: Text("显示底部菜单列表(非模态)"),
+            onPressed: () async {
+              _showBottomSheet();
+            },
+          ),
+          RaisedButton(
+            child: Text("显示Loading框"),
+            onPressed: () async {
+              showLoadingDialog();
+            },
+          ),
+          RaisedButton(
+            child: Text("打开Material风格的日历选择框"),
+            onPressed: () async {
+              _showDatePicker1();
+            },
+          ),
+          RaisedButton(
+            child: Text("打开iOS风格的日历选择框"),
+            onPressed: () async {
+              _showDatePicker2();
+            },
+          ),
+        ],
+      ),
     );
   }
 
@@ -281,6 +308,58 @@ class _DialogRouteState extends State<DialogRoute> {
     );
   }
 
+  Future<bool> showDeleteConfirmDialog3x() {
+    bool _withTree = false; //记录复选框是否选中
+    print(defaultTargetPlatform);
+    //TargetPlatform.iOS;
+    return showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("提示"),
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text("您确定要删除当前文件吗?"),
+              Row(
+                children: <Widget>[
+                  Text("同时删除子目录？"),
+                  StatefulBuilder(
+                    builder: (context, _setState) {
+                      return Checkbox(
+                        value: _withTree, //默认不选中
+                        onChanged: (bool value) {
+                          _setState(() {
+                            //更新选中状态
+                            _withTree = !_withTree;
+                          });
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text("取消"),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            FlatButton(
+              child: Text("删除"),
+              onPressed: () {
+                // 将选中状态返回
+                Navigator.of(context).pop(_withTree);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Future<bool> showDeleteConfirmDialog4() {
     bool _withTree = false;
     return showDialog<bool>(
@@ -392,32 +471,67 @@ class _DialogRouteState extends State<DialogRoute> {
     );
   }
 
-showLoadingDialog() {
-  showDialog(
-    context: context,
-    barrierDismissible: false, //点击遮罩不关闭对话框
-    builder: (context) {
-      return UnconstrainedBox(
-        constrainedAxis: Axis.vertical,
-        child: SizedBox(
-          width: 280,
-          child: AlertDialog(
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                CircularProgressIndicator(),
-                Padding(
-                  padding: const EdgeInsets.only(top: 26.0),
-                  child: Text("正在加载，请稍后..."),
-                )
-              ],
+  showLoadingDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false, //点击遮罩不关闭对话框
+      builder: (context) {
+        return UnconstrainedBox(
+          constrainedAxis: Axis.vertical,
+          child: SizedBox(
+            width: 280,
+            child: AlertDialog(
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  CircularProgressIndicator(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 26.0),
+                    child: Text("正在加载，请稍后..."),
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    },
-  );
-}
+        );
+      },
+    );
+  }
+
+  Future<DateTime> _showDatePicker1() {
+    var date = DateTime.now();
+    return showDatePicker(
+      context: context,
+      initialDate: date,
+      firstDate: date,
+      lastDate: date.add(
+        Duration(days: 30),
+      ),
+    );
+  }
+
+  Future<DateTime> _showDatePicker2() {
+    var date = DateTime.now();
+    return showCupertinoModalPopup(
+      context: context,
+      builder: (ctx) {
+        return SizedBox(
+          height: 200,
+          child: CupertinoDatePicker(
+            mode: CupertinoDatePickerMode.dateAndTime,
+            minimumDate: date,
+            maximumDate: date.add(
+              Duration(days: 30),
+            ),
+            maximumYear: date.year + 1,
+            onDateTimeChanged: (DateTime value) {
+              print(value);
+            },
+          ),
+        );
+      },
+    );
+  }
 
   Future<T> showCustomDialog<T>({
     @required BuildContext context,
