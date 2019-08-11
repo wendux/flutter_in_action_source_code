@@ -10,12 +10,10 @@ import 'package:flutter_in_action/i10n/localization_intl.dart';
 import 'widgets/index.dart';
 import 'routes/index.dart';
 import 'package:dio/dio.dart';
-import 'package:dio_flutter_transformer/dio_flutter_transformer.dart';
 import 'http.dart';
 import 'common.dart';
 
 void main() async {
-  dio.transformer = new FlutterTransformer();
   cameras = await availableCameras();
   dio.interceptors..add(CookieManager(CookieJar()))..add(LogInterceptor());
   runApp(MyApp());

@@ -23,7 +23,7 @@ class AlignRoute extends StatelessWidget {
           child: Align(
             widthFactor: 2,
             heightFactor: 2,
-            alignment: Alignment(2,0.0),
+            alignment: Alignment(2, 0.0),
             child: FlutterLogo(
               size: 60,
             ),
@@ -40,7 +40,23 @@ class AlignRoute extends StatelessWidget {
             ),
           ),
         ),
-      ].map((e)=>Padding(padding: EdgeInsets.only(top: 16), child: e)).toList(),
+        DecoratedBox(
+          decoration: BoxDecoration(color: Colors.red),
+          child: Center(
+            child: Text("xxx"),
+          ),
+        ),
+        DecoratedBox(
+          decoration: BoxDecoration(color: Colors.red),
+          child: Center(
+            widthFactor: 1,
+            heightFactor: 1,
+            child: Text("xxx"),
+          ),
+        )
+      ]
+          .map((e) => Padding(padding: EdgeInsets.only(top: 16), child: e))
+          .toList(),
     );
   }
 }
