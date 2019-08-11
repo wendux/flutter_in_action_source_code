@@ -11,3 +11,9 @@
 ## 运行效果
 
 ![运行界面](home.png)
+
+## 打赏
+
+对我有帮助？请作者喝杯咖啡
+
+![](https://cdn.jsdelivr.net/gh/flutterchina/flutter-in-action@1.0.3/docs/imgs/pay.jpeg)
