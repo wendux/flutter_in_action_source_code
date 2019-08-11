@@ -46,11 +46,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "userNameOrEmail": "用户名或邮箱",
-  "@userNameOrEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
   "userNameRequired": "用户名不能为空",
   "@userNameRequired": {
     "type": "text",

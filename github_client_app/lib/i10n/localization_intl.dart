@@ -42,7 +42,6 @@ class GmLocalizations {
       Intl.message('No description yet !', name: 'noDescription');
 
   String get userName => Intl.message('User Name', name: 'userName');
-  String get userNameOrEmail => Intl.message('User name or Email', name: 'userNameOrEmail');
   String get userNameRequired => Intl.message("User name required!" , name: 'userNameRequired');
   String get password => Intl.message('Password', name: 'password');
   String get passwordRequired => Intl.message('Password required!', name: 'passwordRequired');

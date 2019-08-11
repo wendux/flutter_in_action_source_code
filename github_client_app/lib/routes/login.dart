@@ -39,7 +39,7 @@ class _LoginRouteState extends State<LoginRoute> {
                   controller: _unameController,
                   decoration: InputDecoration(
                     labelText: gm.userName,
-                    hintText: gm.userNameOrEmail,
+                    hintText: gm.userName,
                     prefixIcon: Icon(Icons.person),
                   ),
                   // 校验用户名（不能为空）

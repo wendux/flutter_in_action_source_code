@@ -1,6 +1,6 @@
 {
-  "@@last_modified": "2019-07-19T19:05:16.592152",
-  "title": "Github client",
+  "@@last_modified": "2019-08-11T18:39:59.060353",
+  "title": "Flutter APP",
   "@title": {
     "description": "Title for the Demo application",
     "type": "text",
@@ -43,11 +43,6 @@
   },
   "userName": "User Name",
   "@userName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "userNameOrEmail": "User name or Email",
-  "@userNameOrEmail": {
     "type": "text",
     "placeholders": {}
   },
