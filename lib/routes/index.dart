@@ -37,3 +37,6 @@ export 'future_and_stream_builder.dart';
 export 'camera.dart';
 export 'platform_view.dart';
 export 'dialog.dart';
+export 'animated_widgets.dart';
+export 'context.dart';
+export 'state.dart';

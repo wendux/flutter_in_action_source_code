@@ -26,6 +26,7 @@ class Global {
 
   //初始化全局信息
   static Future init() async {
+    WidgetsFlutterBinding.ensureInitialized();
     _prefs = await SharedPreferences.getInstance();
     var _profile = _prefs.getString("profile");
     if (_profile != null) {

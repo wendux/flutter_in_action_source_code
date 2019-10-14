@@ -10,8 +10,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.15.7
-  dio: ^2.1.13
+  intl: ^0.16.0
+  dio: ^3.0.3
   provider: ^3.0.0+1
   shared_preferences: ^0.5.1+1
   cached_network_image: ^0.8.0

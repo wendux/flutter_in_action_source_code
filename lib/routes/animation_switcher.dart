@@ -14,7 +14,7 @@ class _AnimatedSwitcherRouteState extends State<AnimatedSwitcherRoute> {
       child: Column(
         children: <Widget>[
           AnimatedSwitcher(
-            duration: Duration(milliseconds: 6000),
+            duration: Duration(milliseconds: 600),
             transitionBuilder: (Widget child, Animation<double> animation) {
 //             旧页面屏幕中向左侧平移退出，新页面重屏幕右侧平移进入
 //            var tween = Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0));

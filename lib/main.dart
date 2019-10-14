@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:camera/camera.dart';
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -14,9 +15,9 @@ import 'http.dart';
 import 'common.dart';
 
 void main() async {
-  cameras = await availableCameras();
   dio.interceptors..add(CookieManager(CookieJar()))..add(LogInterceptor());
   runApp(MyApp());
+  cameras = await availableCameras();
   PaintingBinding.instance.imageCache.maximumSize = 2000; //最多2000张
   PaintingBinding.instance.imageCache.maximumSizeBytes = 200 << 20; //200 M
 }
@@ -122,6 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ExpansionTile(
               title: Text("基础组件"),
               children: _generateItem(context, [
+                PageInfo("Context测试", (ctx) => ContextRoute(), withScaffold: false),
+                PageInfo("Widget树中获取State对象", (ctx) => RetrieveStateRoute(), withScaffold: false),
                 PageInfo("文本、字体样式", (ctx) => TextRoute()),
                 PageInfo("按钮", (ctx) => ButtonRoute()),
                 PageInfo("图片伸缩", (ctx) => ImageAndIconRoute()),
@@ -204,6 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 PageInfo("动画切换组件(AnimatedSwitcher)",
                     (ctx) => AnimatedSwitcherCounterRoute()),
                 PageInfo("动画切换组件高级用法", (ctx) => AnimatedSwitcherRoute()),
+                PageInfo("动画过渡组件", (ctx) => AnimatedWidgetsTest()),
               ]),
             ),
             ExpansionTile(

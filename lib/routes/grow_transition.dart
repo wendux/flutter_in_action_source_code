@@ -7,11 +7,11 @@ class GrowTransition extends StatelessWidget {
   final Animation<double> animation;
 
   Widget build(BuildContext context) {
-    return new Center(
-      child: new AnimatedBuilder(
+    return Center(
+      child: AnimatedBuilder(
           animation: animation,
           builder: (BuildContext context, Widget child) {
-            return new Container(
+            return Container(
                 height: animation.value,
                 width: animation.value,
                 child: child
@@ -25,7 +25,7 @@ class GrowTransition extends StatelessWidget {
 
 class GrowTransitionRoute extends StatefulWidget {
   @override
-  _GrowTransitionRouteState createState() => new _GrowTransitionRouteState();
+  _GrowTransitionRouteState createState() => _GrowTransitionRouteState();
 }
 
 //需要继承TickerProvider，如果有多个AnimationController，则应该使用TickerProviderStateMixin。
@@ -36,9 +36,9 @@ class _GrowTransitionRouteState extends State<GrowTransitionRoute>  with SingleT
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(seconds: 2), vsync: this);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
+    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
     controller.forward();
   }
 
