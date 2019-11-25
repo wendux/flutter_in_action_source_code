@@ -129,6 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 PageInfo("按钮", (ctx) => ButtonRoute()),
                 PageInfo("图片伸缩", (ctx) => ImageAndIconRoute()),
                 PageInfo("单选开关和复选框", (ctx) => SwitchAndCheckBoxRoute()),
+                PageInfo("输入框",(ctx)=>FocusTestRoute()),
                 PageInfo("进度条", (ctx) => ProgressRoute()),
               ]),
             ),
@@ -168,6 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ExpansionTile(
               title: Text("事件处理与通知"),
               children: _generateItem(context, [
+                PageInfo("原生指针事件", (ctx) => PointerRoute()),
                 PageInfo("通知(Notification)", (ctx) => NotificationRoute()),
               ]),
             ),

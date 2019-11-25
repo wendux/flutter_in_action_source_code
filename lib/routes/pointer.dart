@@ -20,7 +20,7 @@ class PointerRoute extends StatelessWidget {
           ),
           onPointerDown: (event) => print("down1"),
           //behavior: HitTestBehavior.translucent, //放开此行注释后可以"点透"
-          behavior: HitTestBehavior.opaque,
+          //behavior: HitTestBehavior.opaque,
         )
       ],
     );
