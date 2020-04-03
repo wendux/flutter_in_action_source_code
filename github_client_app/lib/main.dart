@@ -60,6 +60,7 @@ class MyApp extends StatelessWidget {
               "login": (context) => LoginRoute(),
               "themes": (context) => ThemeChangeRoute(),
               "language": (context) => LanguageRoute(),
+              "webview": (context)=> WebViewRoute(),
             },
           );
         },
