@@ -19,7 +19,7 @@ class _AnimatedSwitcherCounterRouteState
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           AnimatedSwitcher(
-            duration: const Duration(milliseconds: 8000),
+            duration: const Duration(milliseconds: 400),
             transitionBuilder: (Widget child, Animation<double> animation) {
               return ScaleTransition(child: child, scale: animation);
             },
@@ -30,7 +30,7 @@ class _AnimatedSwitcherCounterRouteState
               style: Theme
                   .of(context)
                   .textTheme
-                  .display1,
+                  .headline4,
             ),
           ),
           RaisedButton(

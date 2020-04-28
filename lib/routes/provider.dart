@@ -11,6 +11,12 @@ class ProviderRoute extends StatefulWidget {
 
 class _ProviderRouteState extends State<ProviderRoute> {
   @override
+  void didUpdateWidget(ProviderRoute oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    print("xxx");
+  }
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: ChangeNotifierProvider<CartModel>(

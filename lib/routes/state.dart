@@ -11,8 +11,7 @@ class RetrieveStateRoute extends StatelessWidget {
         child: Builder(builder: (context) {
           return RaisedButton(
             onPressed: () {
-//          ScaffoldState _state = context.ancestorStateOfType(
-//              TypeMatcher<ScaffoldState>());
+              //ScaffoldState _state = context.findAncestorStateOfType<ScaffoldState>();
               ScaffoldState _state = Scaffold.of(context);
               _state.showSnackBar(
                 SnackBar(

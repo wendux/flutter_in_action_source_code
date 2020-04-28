@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_in_action/i10n/localization_intl.dart';
+import 'package:flutter_in_action/l10n/localization_intl.dart';
 import 'widgets/index.dart';
 import 'routes/index.dart';
 import 'package:dio/dio.dart';
