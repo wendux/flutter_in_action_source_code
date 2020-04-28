@@ -14,7 +14,7 @@ dependencies:
   dio: ^3.0.3
   provider: ^3.0.0+1
   shared_preferences: ^0.5.1+1
-  cached_network_image: ^0.8.0
+  cached_network_image: ^2.0.0
   fluttertoast: ^3.0.3
   flukit: ^1.0.2
 
