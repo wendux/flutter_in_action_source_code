@@ -1,3 +1,11 @@
+# 将登录不了的git客户端修改为了gitee客户端
+1、文字国际化修改为gitee
+2、修改json、实体更换为gitee用户、repo改为gitee返回格式
+3、新增 giteeClient.json、access.json
+4、在登录时，填写gitee 应用数据。并且持久化处理
+# 需要自己的码云创建一个第三应用登录的授权
+- [https://gitee.com/api/v5/oauth_doc#/list-item-3](https://gitee.com/api/v5/oauth_doc#/list-item-3)
+
 # github_client_app
 
 A Github client APP built with Flutter

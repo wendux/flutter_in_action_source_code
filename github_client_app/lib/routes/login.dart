@@ -8,6 +8,8 @@ class LoginRoute extends StatefulWidget {
 class _LoginRouteState extends State<LoginRoute> {
   TextEditingController _unameController = new TextEditingController();
   TextEditingController _pwdController = new TextEditingController();
+  TextEditingController _clientIdController = new TextEditingController();
+  TextEditingController _clientSecretController = new TextEditingController();
   bool pwdShow = false;
   GlobalKey _formKey = new GlobalKey<FormState>();
   bool _nameAutoFocus = true;
@@ -19,6 +21,12 @@ class _LoginRouteState extends State<LoginRoute> {
     if (_unameController.text != null) {
       _nameAutoFocus = false;
     }
+    //自动填充上次填写的giteeClient信息
+    if(Global.profile.giteeClient!=null){
+      _clientIdController.text = Global.profile.giteeClient.client_id;
+      _clientSecretController.text = Global.profile.giteeClient.client_secret;
+    }
+
     super.initState();
   }
 
@@ -68,6 +76,30 @@ class _LoginRouteState extends State<LoginRoute> {
                   return v.trim().isNotEmpty ? null : gm.passwordRequired;
                 },
               ),
+              TextFormField(
+                controller: _clientIdController,
+                decoration: InputDecoration(
+                    labelText: "clientId",
+                    hintText: "clientId",
+                    prefixIcon: Icon(Icons.compare_arrows),
+                    ),
+                //校验密码（不能为空）
+                validator: (v) {
+                  return v.trim().isNotEmpty ? null : gm.clientIdRequired;
+                },
+              ),
+              TextFormField(
+                controller: _clientSecretController,
+                decoration: InputDecoration(
+                    labelText: "clientSecret",
+                    hintText: "clientSecret",
+                    prefixIcon: Icon(Icons.compare_arrows),
+                    ),
+                //校验密码（不能为空）
+                validator: (v) {
+                  return v.trim().isNotEmpty ? null : gm.clientSecretRequired;
+                },
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 25),
                 child: ConstrainedBox(
@@ -94,7 +126,7 @@ class _LoginRouteState extends State<LoginRoute> {
       User user;
       try {
         user = await Git(context)
-            .login(_unameController.text, _pwdController.text);
+            .login(_unameController.text, _pwdController.text,_clientIdController.text,_clientSecretController.text);
         // 因为登录页返回后，首页会build，所以我们传false，更新user后不触发更新
         Provider.of<UserModel>(context, listen: false).user = user;
       } catch (e) {
