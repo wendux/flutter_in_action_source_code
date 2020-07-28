@@ -26,7 +26,7 @@ class GmLocalizations {
     );
   }
 
-  String get home => Intl.message('Github', name: 'home');
+  String get home => Intl.message('Gitee', name: 'home');
 
   String get language => Intl.message('Language', name: 'language');
 
@@ -45,6 +45,9 @@ class GmLocalizations {
   String get userNameRequired => Intl.message("User name required!" , name: 'userNameRequired');
   String get password => Intl.message('Password', name: 'password');
   String get passwordRequired => Intl.message('Password required!', name: 'passwordRequired');
+  String get clientIdRequired => Intl.message('clientId required!', name: 'clientIdRequired');
+  String get clientSecretRequired => Intl.message('clientSecret required!', name: 'clientSecretRequired');
+
   String get userNameOrPasswordWrong=>Intl.message('User name or password is not correct!', name: 'userNameOrPasswordWrong');
   String get logout => Intl.message('logout', name: 'logout');
   String get logoutTip => Intl.message('Are you sure you want to quit your current account?', name: 'logoutTip');

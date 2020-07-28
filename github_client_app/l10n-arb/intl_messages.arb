@@ -1,12 +1,12 @@
 {
-  "@@last_modified": "2019-08-11T18:39:59.060353",
+  "@@last_modified": "2020-07-28T10:49:02.499268",
   "title": "Flutter APP",
   "@title": {
     "description": "Title for the Demo application",
     "type": "text",
     "placeholders": {}
   },
-  "home": "Github",
+  "home": "Gitee",
   "@home": {
     "type": "text",
     "placeholders": {}
@@ -58,6 +58,16 @@
   },
   "passwordRequired": "Password required!",
   "@passwordRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clientIdRequired": "clientId required!",
+  "@clientIdRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clientSecretRequired": "clientSecret required!",
+  "@clientSecretRequired": {
     "type": "text",
     "placeholders": {}
   },

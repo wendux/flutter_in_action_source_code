@@ -1,5 +1,6 @@
 {
   "user":"$user",
+  "giteeClient": "$giteeClient",
   "token":"",
   "theme":5678,
   "cache":"$cacheConfig",

@@ -1,0 +1,8 @@
+{
+  "access_token": "",
+  "token_type": "",
+  "expires_in": 86400,
+  "refresh_token": "",
+  "scope": "projects user_info issues notes",
+  "created_at": 1595902217
+}

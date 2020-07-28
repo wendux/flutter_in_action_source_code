@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import "user.dart";
+import "giteeClient.dart";
 import "cacheConfig.dart";
 part 'profile.g.dart';
 
@@ -8,6 +9,7 @@ class Profile {
     Profile();
 
     User user;
+    GiteeClient giteeClient;
     String token;
     num theme;
     CacheConfig cache;

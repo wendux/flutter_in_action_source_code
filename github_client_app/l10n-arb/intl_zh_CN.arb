@@ -6,7 +6,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "home": "Github客户端",
+  "home": "码云客户端",
   "@home": {
     "type": "text",
     "placeholders": {}
@@ -58,6 +58,16 @@
   },
   "passwordRequired": "密码不能为空",
   "@passwordRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clientIdRequired": "clientId 不能为空!",
+  "@clientIdRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clientSecretRequired": "clientSecret 不能为空!",
+  "@clientSecretRequired": {
     "type": "text",
     "placeholders": {}
   },

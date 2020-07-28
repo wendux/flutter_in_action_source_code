@@ -11,6 +11,9 @@ Profile _$ProfileFromJson(Map<String, dynamic> json) {
     ..user = json['user'] == null
         ? null
         : User.fromJson(json['user'] as Map<String, dynamic>)
+    ..giteeClient = json['giteeClient'] == null
+        ? null
+        : GiteeClient.fromJson(json['giteeClient'] as Map<String, dynamic>)
     ..token = json['token'] as String
     ..theme = json['theme'] as num
     ..cache = json['cache'] == null
@@ -22,6 +25,7 @@ Profile _$ProfileFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$ProfileToJson(Profile instance) => <String, dynamic>{
       'user': instance.user,
+      'giteeClient': instance.giteeClient,
       'token': instance.token,
       'theme': instance.theme,
       'cache': instance.cache,

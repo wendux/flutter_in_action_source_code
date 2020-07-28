@@ -36,7 +36,7 @@ class _HomeRouteState extends State<HomeRoute> {
             refresh: refresh,
             queryParameters: {
               'page': page,
-              'page_size': 20,
+              'per_page': 20,
             },
           );
           //把请求到的新数据添加到items中
