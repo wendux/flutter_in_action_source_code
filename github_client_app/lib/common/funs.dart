@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-Widget gmAvatar(String url, {
+Widget gmAvatar(
+  String url, {
   double width = 30,
-  double height,
-  BoxFit fit,
-  BorderRadius borderRadius,
+  double? height,
+  BoxFit? fit,
+  BorderRadius? borderRadius,
 }) {
-  var placeholder = Image.asset(
-      "imgs/avatar-default.png", //头像默认值
-      width: width,
-      height: height
-  );
+  var placeholder =
+      Image.asset("imgs/avatar-default.png", width: width, height: height);
+
   return ClipRRect(
     borderRadius: borderRadius ?? BorderRadius.circular(2),
     child: CachedNetworkImage(
@@ -20,30 +20,29 @@ Widget gmAvatar(String url, {
       width: width,
       height: height,
       fit: fit,
-      placeholder: (context, url) =>placeholder,
-      errorWidget: (context, url, error) =>placeholder,
+      placeholder: (context, url) => placeholder,
+      errorWidget: (context, url, error) => placeholder,
     ),
   );
 }
 
 void showToast(String text, {
-  gravity: ToastGravity.CENTER,
-  toastLength: Toast.LENGTH_SHORT,
+    gravity = ToastGravity.CENTER,
+    toastLength = Toast.LENGTH_SHORT,
 }) {
   Fluttertoast.showToast(
     msg: text,
     toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.BOTTOM,
-    timeInSecForIos: 1,
+    timeInSecForIosWeb: 1,
     backgroundColor: Colors.grey[600],
     fontSize: 16.0,
   );
 }
 
-void showLoading(context, [String text]) {
-  text = text ?? "Loading...";
+void showLoading(context, [String? text]) {
+  text = text ?? "loading...";
   showDialog(
-      barrierDismissible: false,
       context: context,
       builder: (context) {
         return Center(
@@ -52,12 +51,7 @@ void showLoading(context, [String text]) {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(3.0),
                 boxShadow: [
-                  //阴影
-                  BoxShadow(
-                    color: Colors.black12,
-                    //offset: Offset(2.0,2.0),
-                    blurRadius: 10.0,
-                  )
+                  BoxShadow(color: Colors.black12, blurRadius: 10.0)
                 ]),
             padding: EdgeInsets.all(16),
             margin: EdgeInsets.all(16),
@@ -65,7 +59,7 @@ void showLoading(context, [String text]) {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: [
                 SizedBox(
                   height: 30,
                   width: 30,
@@ -74,15 +68,12 @@ void showLoading(context, [String text]) {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
+                  padding: EdgeInsets.only(top: 20.0),
                   child: Text(
-                    text,
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .body2,
+                    text ?? "loading...",
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                ),
+                )
               ],
             ),
           ),

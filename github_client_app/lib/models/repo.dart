@@ -4,38 +4,38 @@ part 'repo.g.dart';
 
 @JsonSerializable()
 class Repo {
-    Repo();
+  Repo();
 
-    num id;
-    String name;
-    String full_name;
-    User owner;
-    Repo parent;
-    bool private;
-    String html_url;
-    String description;
-    bool fork;
-    String homepage;
-    String language;
-    num forks_count;
-    num stargazers_count;
-    num watchers_count;
-    num size;
-    String default_branch;
-    num open_issues_count;
-    List topics;
-    bool has_issues;
-    bool has_projects;
-    bool has_wiki;
-    bool has_pages;
-    bool has_downloads;
-    String pushed_at;
-    String created_at;
-    String updated_at;
-    Map<String,dynamic> permissions;
-    num subscribers_count;
-    Map<String,dynamic> license;
-    
-    factory Repo.fromJson(Map<String,dynamic> json) => _$RepoFromJson(json);
-    Map<String, dynamic> toJson() => _$RepoToJson(this);
+  late num id;
+  late String name;
+  late String full_name;
+  late User owner;
+  //Repo? parent;
+  late bool private;
+  late String html_url;
+  String? description;
+  late bool fork;
+  String? homepage;
+  String? language;
+  late num forks_count;
+  late num stargazers_count;
+  late num watchers_count;
+  late num size;
+  late String default_branch;
+  late num open_issues_count;
+  late List topics;
+  late bool has_issues;
+  late bool has_projects;
+  late bool has_wiki;
+  late bool has_pages;
+  late bool has_downloads;
+  late String pushed_at;
+  late String created_at;
+  late String updated_at;
+  Map<String,dynamic>? permissions;
+  num? subscribers_count;
+  Map<String,dynamic>? license;
+  
+  factory Repo.fromJson(Map<String,dynamic> json) => _$RepoFromJson(json);
+  Map<String, dynamic> toJson() => _$RepoToJson(this);
 }

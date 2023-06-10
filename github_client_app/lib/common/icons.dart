@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
+
+
+import 'package:flutter/cupertino.dart';
 
 class MyIcons {
-  static const IconData github_outline = IconData(0xe799, fontFamily: 'myIcon');
-  static const IconData github = IconData(0xe7ab, fontFamily: 'myIcon');
-  static const IconData fork = IconData(0xe65b, fontFamily: 'myIcon');
-  static const IconData pr = IconData(0xe8b8, fontFamily: 'myIcon');
-  static const IconData code = IconData(0xe646, fontFamily: 'myIcon');
+  static const IconData github_outline = const IconData(0xe799, fontFamily: 'myIcons');
+  static const IconData github = const IconData(0xe7ab, fontFamily: 'myIcons');
+  static const IconData fork = const IconData(0xe65b, fontFamily: 'myIcons');
+  static const IconData pr = const IconData(0xe8b8, fontFamily: 'myIcons');
+  static const IconData code = const IconData(0xe646, fontFamily: 'myIcons');
 }

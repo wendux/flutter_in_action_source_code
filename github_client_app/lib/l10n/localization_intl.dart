@@ -1,20 +1,24 @@
-import 'package:flutter/material.dart';
+
+
+import 'dart:ffi';
+
+import 'package:flutter/cupertino.dart';
+import 'package:github_client_app/l10n/messages_all.dart';
 import 'package:intl/intl.dart';
-import 'messages_all.dart'; //1
+
 
 class GmLocalizations {
   static Future<GmLocalizations> load(Locale locale) {
-    final String name =
-        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
-    final String localeName = Intl.canonicalizedLocale(name);
-    //2
-    return initializeMessages(localeName).then((b) {
-      Intl.defaultLocale = localeName;
-      return new GmLocalizations();
-    });
+     final String name = locale.countryCode!.isEmpty ? locale.languageCode :
+         locale.toString();
+     final String localeName = Intl.canonicalizedLocale(name);
+     return initializeMessages(localeName).then((value) {
+       Intl.defaultLocale = localeName;
+       return GmLocalizations();
+     });
   }
-
-  static GmLocalizations of(BuildContext context) {
+  
+  static GmLocalizations? of(BuildContext context) {
     return Localizations.of<GmLocalizations>(context, GmLocalizations);
   }
 
@@ -54,11 +58,11 @@ class GmLocalizations {
 
 //Locale代理类
 class GmLocalizationsDelegate extends LocalizationsDelegate<GmLocalizations> {
-  const GmLocalizationsDelegate();
-
-  //是否支持某个Local
+  // 是否支持某个local
   @override
-  bool isSupported(Locale locale) => ['en', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) {
+    return ['en', 'zh'].contains(locale.languageCode);
+  }
 
   // Flutter会调用此类加载相应的Locale资源类
   @override
@@ -69,5 +73,5 @@ class GmLocalizationsDelegate extends LocalizationsDelegate<GmLocalizations> {
 
   // 当Localizations Widget重新build时，是否调用load重新加载Locale资源.
   @override
-  bool shouldReload(GmLocalizationsDelegate old) => false;
+  bool shouldReload(covariant LocalizationsDelegate<GmLocalizations> old) => false;
 }

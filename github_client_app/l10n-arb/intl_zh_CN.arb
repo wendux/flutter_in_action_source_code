@@ -1,0 +1,89 @@
+{
+  "@@last_modified": "2023-06-08T12:02:09.038321",
+  "title": "Github客户端",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Github客户端",
+  "@home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "语言",
+  "@language": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "登录",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "auto": "跟随系统",
+  "@auto": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setting": "设置",
+  "@setting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theme": "换肤",
+  "@theme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noDescription": "暂无描述!",
+  "@noDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userName": "用户名",
+  "@userName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameRequired": "用户名不能为空",
+  "@userNameRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "密码",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordRequired": "密码不能为空",
+  "@passwordRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameOrPasswordWrong": "用户名或密码不正确",
+  "@userNameOrPasswordWrong": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logout": "注销",
+  "@logout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutTip": "确定要退出当前账号吗?",
+  "@logoutTip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yes": "确定",
+  "@yes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
